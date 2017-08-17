@@ -1,16 +1,6 @@
+brycecmiller.com
 
-TITLE: 
-Elate - One Page Responsive Free HTML5 template
-
-AUTHOR:
-DESIGNED & DEVELOPED by FREEHTML5.co
-
-Website: http://freehtml5.co/
-Twitter: http://twitter.com/fh5co
-Facebook: http://facebook.com/fh5co
-
-
-CREDITS:
+DEPENDENCIES:
 
 Bootstrap
 http://getbootstrap.com/
@@ -42,18 +32,15 @@ http://daneden.me/animate
 jQuery Waypoint
 https://github.com/imakewebthings/waypoints/blog/master/licenses.txt
 
-Styleswitcher for Demo
-https://github.com/camsjams/jquery-style-switcher
-
 countTo JS
 https://github.com/mhuggins/jquery-countTo
 
 Stellar Parallax
 http://markdalgleish.com/projects/stellar.js/
 
-Demo Images:
-http://pexels.com
-http://plmd.me
-
 Mafnific Popup
 http://dimsemenov.com/plugins/magnific-popup/
+
+Images:
+http://pexels.com
+http://plmd.me
