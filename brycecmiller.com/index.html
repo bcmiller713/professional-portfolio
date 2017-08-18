@@ -439,32 +439,25 @@
 				</div>
 				<div class="col-md-6 to-animate">
 					<h3>Contact Form</h3>
-					<form role="form" method="post" action="../php/contact.php">
+					<form role="form" name="contact-form" method="post" action="contact.php">
 						<div class="form-group">
 							<label for="name" class="sr-only control-label">Name</label>
-							<input id="name" class="form-control" name="name" placeholder="Name" type="text" value="<?php echo htmlspecialchars($_POST['name']); ?>">
-							<?php echo "<p class='text-danger'>$errName</p>";?>
+							<input id="name" class="form-control" name="name" placeholder="Name" type="text">
 						</div>
 						<div class="form-group">
 							<label for="email" class="sr-only control-label">Email</label>
-							<input id="email" class="form-control" name="email" placeholder="Email" type="email" value="<?php echo htmlspecialchars($_POST['email']); ?>">
-							<?php echo "<p class='text-danger'>$errEmail</p>";?>
+							<input id="email" class="form-control" name="email" placeholder="Email" type="email">
 						</div>
 						<div class="form-group">
 							<label for="phone" class="sr-only control-label">Phone</label>
-							<input id="phone" class="form-control" name="phone" placeholder="Phone" type="text" value="<?php echo htmlspecialchars($_POST['phone']); ?>">
-							<?php echo "<p class='text-danger'>$errPhone</p>";?>
+							<input id="phone" class="form-control" name="phone" placeholder="Phone" type="text">
 						</div>
 						<div class="form-group">
 							<label for="message" class="sr-only control-label">Message</label>
-							<textarea id="message" name="message" cols="30" rows="5" class="form-control" placeholder="Message"><?php echo htmlspecialchars($_POST['message']);?></textarea>
-							<?php echo "<p class='text-danger'>$errMessage</p>";?>
+							<textarea id="message" name="message" cols="30" rows="5" class="form-control" placeholder="Message"></textarea>
 						</div>
 						<div class="form-group">
-							<input id="submit" class="btn btn-primary btn-lg" name="submit" value="Send Message" type="submit">
-						</div>
-						<div class="form-group">
-							<?php echo $result; ?>
+							<input id="submit" class="btn btn-primary btn-lg" name="submit" value="Send Form" type="submit">
 						</div>
 					</form>
 				</div>
