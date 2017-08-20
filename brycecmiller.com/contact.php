@@ -6,19 +6,18 @@
 		return $data;
 	}
 
-	if (isset($_POST["submit"])) {
+	if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		$name = validate($_POST["name"]);
 		$email = validate($_POST["email"]);
 		$phone = validate($_POST["phone"]);
 		$message = validate($_POST["message"]);
 
-		$from = "bcmiller713@gmail.com";
-		$subject = "BryceCMiller.com Contact Form";
+		$from = "brycfptw@server223.web-hosting.com";
+		$subject = "brycecmiller.com Contact Form";
 		$body = "Name: $name\n Email: $email\n Phone: $phone\n Message:\n $message";
 
 		$to = "bcmiller713@gmail.com";
-		$headers = "From: $from\n";
-		$headers .= "Reply-To: $email\n";
+		$headers = "From: $from" . "\r\n" . "Reply-To: $email";
  
 		// Check if name has been entered
 		if (!$_POST["name"]) {
@@ -42,7 +41,8 @@
  
 		// If there are no errors, send the email
 		if (!$errName && !$errEmail && !$errPhone && !$errMessage) {
-			mail($to,$subject,$body,$headers);
+			mail($to, $subject, $body, $headers);
+			// header("Location: index.html");
 		}
 	}
 ?>
