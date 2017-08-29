@@ -436,66 +436,114 @@
 	var request;
 
 	$("#contact-form").on("submit", function(event) {
-		// Prevent default posting of form - put here to work in case of errors
-    event.preventDefault();
+			// Prevent default posting of form - put here to work in case of errors
+	    event.preventDefault();
 
-    // Abort any pending request
-    if (request) {
-        request.abort();
-    }
-    // setup some local variables
-    var $form = $(this);
+	    // Clear any error messaging
+    	$("#name-error").html("");
+    	$("#email-error").html("");
+    	$("#message-error").html("");
+    	$("#name").parent().removeClass("has-error");
+    	$("#email").parent().removeClass("has-error");
+    	$("#message").parent().removeClass("has-error");
 
-    // Let's select and cache all the fields
-    var $inputs = $form.find("input, select, button, textarea");
+	    // Abort any pending request
+	    if (request) {
+	      request.abort();
+	    }
 
-    console.log($inputs);
+	    // Validate Input
+	    var inputName = $("#name").val().trim();
+	    var nameReg = /^[a-zA-Z ]+$/;
+	    var inputEmail = $("#email").val().trim();
+	    var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+	    // var inputPhone = $("#phone").trim().val();
+	    // var phoneReg = /^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/;
+	    var inputMessage = $("#message").val().trim();
+	    var inputError = false;
 
-    // Serialize the data in the form
-    var serializedData = $form.serialize();
+	    if (inputName === "") {
+	    	$("#name-error").html("Name is required");
+	    	$("#name").parent().addClass("has-error");
+	    	inputError = true;
+	    }
+	    else if (!nameReg.test(inputName)) {
+	    	$("#name-error").html("Only letters and spaces allowed")
+	    	$("#name").parent().addClass("has-error");
+	    	inputError = true;
+	    }
+	    if (inputEmail === "") {
+	    	$("#email-error").html("Email is required");
+	    	$("#email").parent().addClass("has-error");
+	    	inputError = true;
+	    }
+	    else if (!emailReg.test(inputEmail)) {
+	      $("#email-error").html("Invalid Email Format");
+	    	$("#email").parent().addClass("has-error");
+	    	inputError = true;
+	    }
+	    // if (!phoneReg.test(inputPhone)) {
+		    // $("#phone-error").html("Invalid phone number");
+		    // inputError = true;
+	    // }
+	    if (inputMessage === "") {
+	    	$("#message-error").html("Message is required");
+	    	$("#message").parent().addClass("has-error");
+	    	inputError = true;
+	    }
+	    
+	    // If no errors, Ajax call runs php script and sends me an email
+	    if (!inputError) {
 
-    console.log(serializedData);
-    // Let's disable the inputs for the duration of the Ajax request.
-    // Note: we disable elements AFTER the form data has been serialized.
-    // Disabled form elements will not be serialized.
-    $inputs.prop("disabled", true);
+	    	// setup some local variables
+		    var $form = $(this);
 
-    // Fire off the request to /form.php
-    request = $.ajax({
-        url: "/contact.php",
-        type: "POST",
-        data: serializedData
-    });
+		    // Let's select and cache all the fields
+		    var $inputs = $form.find("input, textarea");
 
-    // Callback handler that will be called on success
-    request.done(function (response, textStatus, jqXHR){
-        // Log a message to the console
-        console.log("response: ", response);
-    });
+		    // Serialize the data in the form
+		    var serializedData = $form.serialize();
 
-    // Callback handler that will be called on failure
-    request.fail(function (jqXHR, textStatus, errorThrown){
-        // Log the error to the console
-        console.error(
-            "The following error occurred: "+
-            textStatus, errorThrown
-        );
-    });
+		    // Let's disable the inputs for the duration of the Ajax request.
+		    // Note: we disable elements AFTER the form data has been serialized.
+		    // Disabled form elements will not be serialized.
+		    $inputs.prop("disabled", true);
 
-    // Callback handler that will be called regardless
-    // if the request failed or succeeded
-    request.always(function () {
-        // Reenable the inputs
-        $inputs.prop("disabled", false);
-    });
+		    // Fire off the request to /form.php
+		    request = $.ajax({
+		        url: "/contact.php",
+		        type: "POST",
+		        data: serializedData
+		    });
 
-	})
-	
-	
+		    // Callback handler that will be called on success
+		    request.done(function (response, textStatus, jqXHR){
+		        // Log a message to the console
+		        console.log("response: ", response);
+		    });
 
+		    // Callback handler that will be called on failure
+		    request.fail(function (jqXHR, textStatus, errorThrown){
+		        // Log the error to the console
+		        console.error(
+		            "The following error occurred: "+
+		            textStatus, errorThrown
+		        );
+		    });
 
-	
-	
+		    // Callback handler that will be called regardless
+	    	// if the request failed or succeeded
+	    	request.always(function () {
+	      	// Reenable the inputs
+	      	$inputs.prop("disabled", false);
+	      	// Clear text from inputs
+	      	$("#name").val("");
+	      	$("#email").val("");
+	      	$("#phone").val("");
+	      	$("#message").val("");
+	    	});
+	  	}
+	});
 
 	// Document on load.
 	$(function(){
@@ -512,7 +560,6 @@
 
 		goToTop();
 
-
 		// Animations
 		homeAnimate();
 		introAnimate();
@@ -523,8 +570,6 @@
 		countersAnimate();
 		contactAnimate();
 		
-
 	});
-
 
 }());

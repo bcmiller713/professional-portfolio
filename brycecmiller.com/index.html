@@ -212,17 +212,17 @@
 					<a href="images/work_1.jpg" class="project-item image-popup to-animate">
 						<img src="images/work_1.jpg" alt="screenshot" class="img-responsive">
 						<div class="text">
-						<h2>Title TBD</h2>
-						<p>Description TBD this must be two lines of text long</p>
+							<h2>Title TBD</h2>
+							<p>Description TBD this must be two lines of text long</p>
 						</div>
 					</a>
 				</div>
 				<div class="col-md-4 col-sm-6 col-xxs-12">
-					<a href="images/easyeats.png" class="project-item image-popup to-animate">
-						<img src="images/easyeats.png" alt="screenshot" class="img-responsive">
+					<a href="images/easyeats.PNG" class="project-item image-popup to-animate">
+						<img src="images/easyeats.PNG" alt="screenshot" class="img-responsive">
 						<div class="text">
-						<h2>EasyEats</h2>
-						<p>A recipe search app where users can login, save favorite recipes, and add recipes to a database</p>
+							<h2>EasyEats</h2>
+							<p>A recipe search app where users can login, save favorite recipes, and add recipes to a database</p>
 						</div>
 					</a>
 				</div>
@@ -230,20 +230,20 @@
 				<div class="clearfix visible-sm-block"></div>
 
 				<div class="col-md-4 col-sm-6 col-xxs-12">
-					<a href="images/gregis.png" class="project-item image-popup to-animate">
-						<img src="images/gregis.png" alt="screenshot" class="img-responsive">
+					<a href="images/gregis.PNG" class="project-item image-popup to-animate">
+						<img src="images/gregis.PNG" alt="screenshot" class="img-responsive">
 						<div class="text">
-						<h2>GREGIS</h2>
-						<p>An app for finding things to do and places to eat in San Diego</p>
+							<h2>GREGIS</h2>
+							<p>An app for finding things to do and places to eat in San Diego</p>
 						</div>
 					</a>
 				</div>
 				<div class="col-md-4 col-sm-6 col-xxs-12">
-					<a href="images/burger.png" class="project-item image-popup to-animate">
-						<img src="images/burger.png" alt="screenshot" class="img-responsive">
+					<a href="images/burger.PNG" class="project-item image-popup to-animate">
+						<img src="images/burger.PNG" alt="screenshot" class="img-responsive">
 						<div class="text">
-						<h2>Burger</h2>
-						<p>A CRUD app using MySQL and Sequelize to track burgers ordered and eaten</p>
+							<h2>Burger</h2>
+							<p>A CRUD app using MySQL and Sequelize to track burgers ordered and eaten</p>
 						</div>
 					</a>
 				</div>
@@ -251,8 +251,8 @@
 				<div class="clearfix visible-sm-block"></div>
 
 				<div class="col-md-4 col-sm-6 col-xxs-12">
-					<a href="images/friend.png" class="project-item image-popup to-animate">
-						<img src="images/friend.png" alt="screenshot" class="img-responsive">
+					<a href="images/friend.PNG" class="project-item image-popup to-animate">
+						<img src="images/friend.PNG" alt="screenshot" class="img-responsive">
 						<div class="text">
 							<h2>Friend Finder</h2>
 							<p>A survey app for finding compatible friends, built with Express</p>
@@ -260,8 +260,8 @@
 					</a>
 				</div>
 				<div class="col-md-4 col-sm-6 col-xxs-12">
-					<a href="images/bamazon.png" class="project-item image-popup to-animate">
-						<img src="images/bamazon.png" alt="screenshot" class="img-responsive">
+					<a href="images/bamazon.PNG" class="project-item image-popup to-animate">
+						<img src="images/bamazon.PNG" alt="screenshot" class="img-responsive">
 						<div class="text">
 							<h2>Bamazon</h2>
 							<p>An e-commerce marketplace CLI app using Node</p>
@@ -443,21 +443,26 @@
 						<div class="form-group">
 							<label for="name" class="sr-only control-label">Name</label>
 							<input id="name" class="form-control" name="name" placeholder="Name" type="text">
+							<span id="name-error"></span>
 						</div>
 						<div class="form-group">
 							<label for="email" class="sr-only control-label">Email</label>
 							<input id="email" class="form-control" name="email" placeholder="Email" type="email">
+							<span id="email-error"></span>
 						</div>
 						<div class="form-group">
-							<label for="phone" class="sr-only control-label">Phone</label>
-							<input id="phone" class="form-control" name="phone" placeholder="Phone" type="text">
+							<label for="phone" class="sr-only control-label">Phone (optional)</label>
+							<input id="phone" class="form-control" name="phone" placeholder="Phone (optional)" type="text">
 						</div>
 						<div class="form-group">
 							<label for="message" class="sr-only control-label">Message</label>
 							<textarea id="message" name="message" cols="30" rows="5" class="form-control" placeholder="Message"></textarea>
+							<span id="message-error"></span>
 						</div>
 						<div class="form-group">
 							<input id="submit" class="btn btn-primary btn-lg" name="submit" value="Send" type="submit">
+							<br>
+							<span id="form-success"></span>
 						</div>
 					</form>
 				</div>
