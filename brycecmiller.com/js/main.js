@@ -1,17 +1,17 @@
 ;(function () {
-	
+
 	'use strict';
 
 
 
-	// iPad and iPod detection	
+	// iPad and iPod detection
 	var isiPad = function(){
 		return (navigator.platform.indexOf("iPad") != -1);
 	};
 
 	var isiPhone = function(){
 	    return (
-			(navigator.platform.indexOf("iPhone") != -1) || 
+			(navigator.platform.indexOf("iPhone") != -1) ||
 			(navigator.platform.indexOf("iPod") != -1)
 	    );
 	};
@@ -33,11 +33,11 @@
 			if ( $('#navbar').is(':visible') ) {
 				$(this).removeClass('active');
 			} else {
-				$(this).addClass('active');	
+				$(this).addClass('active');
 			}
 
-			
-			
+
+
 		});
 
 	};
@@ -46,16 +46,16 @@
 	var goToTop = function() {
 
 		$('.js-gotop').on('click', function(event){
-			
+
 			event.preventDefault();
 
 			$('html, body').animate({
 				scrollTop: $('html').offset().top
 			}, 500);
-			
+
 			return false;
 		});
-	
+
 	};
 
 
@@ -99,9 +99,9 @@
 	var navigationSection = function() {
 
 		var $section = $('section[data-section]');
-		
+
 		$section.waypoint(function(direction) {
-		  	
+
 		  	if (direction === 'down') {
 		    	navActive($(this.element).data('section'));
 		  	}
@@ -120,7 +120,7 @@
 	};
 
 
-	
+
 
 
 	// Window Scroll
@@ -141,8 +141,8 @@
 						header.removeClass('navbar-fixed-top animated slideInDown slideOutUp');
 					}, 100 );
 				}
-			} 
-			
+			}
+
 		});
 	};
 
@@ -152,27 +152,27 @@
 	// Home
 
 	var homeAnimate = function() {
-		if ( $('#home').length > 0 ) {	
+		if ( $('#home').length > 0 ) {
 
 			$('#home').waypoint( function( direction ) {
-										
+
 				if( direction === 'down' && !$(this.element).hasClass('animated') ) {
 
 
 					setTimeout(function() {
 						$('#home .to-animate').each(function( k ) {
 							var el = $(this);
-							
+
 							setTimeout ( function () {
 								el.addClass('fadeInUp animated');
 							},  k * 200, 'easeInOutExpo' );
-							
+
 						});
 					}, 200);
 
-					
+
 					$(this.element).addClass('animated');
-						
+
 				}
 			} , { offset: '80%' } );
 
@@ -181,27 +181,27 @@
 
 
 	var introAnimate = function() {
-		if ( $('#intro').length > 0 ) {	
+		if ( $('#intro').length > 0 ) {
 
 			$('#intro').waypoint( function( direction ) {
-										
+
 				if( direction === 'down' && !$(this.element).hasClass('animated') ) {
 
 
 					setTimeout(function() {
 						$('#intro .to-animate').each(function( k ) {
 							var el = $(this);
-							
+
 							setTimeout ( function () {
 								el.addClass('fadeInRight animated');
 							},  k * 200, 'easeInOutExpo' );
-							
+
 						});
 					}, 1000);
 
-					
+
 					$(this.element).addClass('animated');
-						
+
 				}
 			} , { offset: '80%' } );
 
@@ -209,27 +209,27 @@
 	};
 
 	var portfolioAnimate = function() {
-		if ( $('#portfolio').length > 0 ) {	
+		if ( $('#portfolio').length > 0 ) {
 
 			$('#portfolio').waypoint( function( direction ) {
-										
+
 				if( direction === 'down' && !$(this.element).hasClass('animated') ) {
 
 
 					setTimeout(function() {
 						$('#portfolio .to-animate').each(function( k ) {
 							var el = $(this);
-							
+
 							setTimeout ( function () {
 								el.addClass('fadeInUp animated');
 							},  k * 200, 'easeInOutExpo' );
-							
+
 						});
 					}, 200);
 
-					
+
 					$(this.element).addClass('animated');
-						
+
 				}
 			} , { offset: '80%' } );
 
@@ -239,10 +239,10 @@
 
 	var recommendationsAnimate = function() {
 		var recommendations = $('#recommendations');
-		if ( recommendations.length > 0 ) {	
+		if ( recommendations.length > 0 ) {
 
 			recommendations.waypoint( function( direction ) {
-										
+
 				if( direction === 'down' && !$(this.element).hasClass('animated') ) {
 
 					var sec = recommendations.find('.to-animate').length,
@@ -251,28 +251,28 @@
 					setTimeout(function() {
 						recommendations.find('.to-animate').each(function( k ) {
 							var el = $(this);
-							
+
 							setTimeout ( function () {
 								el.addClass('fadeInUp animated');
 							},  k * 200, 'easeInOutExpo' );
-							
+
 						});
 					}, 200);
 
 					setTimeout(function() {
 						recommendations.find('.to-animate-2').each(function( k ) {
 							var el = $(this);
-							
+
 							setTimeout ( function () {
 								el.addClass('fadeInDown animated');
 							},  k * 200, 'easeInOutExpo' );
-							
+
 						});
 					}, sec);
 
-					
+
 					$(this.element).addClass('animated');
-						
+
 				}
 			} , { offset: '80%' } );
 
@@ -281,10 +281,10 @@
 
 	var skillsAnimate = function() {
 		var skills = $('#skills');
-		if ( skills.length > 0 ) {	
+		if ( skills.length > 0 ) {
 
 			skills.waypoint( function( direction ) {
-										
+
 				if( direction === 'down' && !$(this.element).hasClass('animated') ) {
 
 					var sec = skills.find('.to-animate').length,
@@ -293,29 +293,29 @@
 					setTimeout(function() {
 						skills.find('.to-animate').each(function( k ) {
 							var el = $(this);
-							
+
 							setTimeout ( function () {
 								el.addClass('fadeInUp animated');
 							},  k * 200, 'easeInOutExpo' );
-							
+
 						});
 					}, 200);
 
 					setTimeout(function() {
 						skills.find('.to-animate-2').each(function( k ) {
 							var el = $(this);
-							
+
 							setTimeout ( function () {
 								el.addClass('bounceIn animated');
 							},  k * 200, 'easeInOutExpo' );
-							
+
 						});
 					}, sec);
 
 
-					
+
 					$(this.element).addClass('animated');
-						
+
 				}
 			} , { offset: '80%' } );
 
@@ -324,28 +324,28 @@
 
 	var aboutAnimate = function() {
 		var about = $('#about');
-		if ( about.length > 0 ) {	
+		if ( about.length > 0 ) {
 
 			about.waypoint( function( direction ) {
-										
+
 				if( direction === 'down' && !$(this.element).hasClass('animated') ) {
 
 
 					setTimeout(function() {
 						about.find('.to-animate').each(function( k ) {
 							var el = $(this);
-							
+
 							setTimeout ( function () {
 								el.addClass('fadeInUp animated');
 							},  k * 200, 'easeInOutExpo' );
-							
+
 						});
 					}, 200);
 
-					
+
 
 					$(this.element).addClass('animated');
-						
+
 				}
 			} , { offset: '80%' } );
 
@@ -354,10 +354,10 @@
 
 	var countersAnimate = function() {
 		var counters = $('#counters');
-		if ( counters.length > 0 ) {	
+		if ( counters.length > 0 ) {
 
 			counters.waypoint( function( direction ) {
-										
+
 				if( direction === 'down' && !$(this.element).hasClass('animated') ) {
 
 					var sec = counters.find('.to-animate').length,
@@ -366,11 +366,11 @@
 					setTimeout(function() {
 						counters.find('.to-animate').each(function( k ) {
 							var el = $(this);
-							
+
 							setTimeout ( function () {
 								el.addClass('fadeInUp animated');
 							},  k * 200, 'easeInOutExpo' );
-							
+
 						});
 					}, 200);
 
@@ -385,20 +385,20 @@
 					setTimeout(function() {
 						counters.find('.to-animate-2').each(function( k ) {
 							var el = $(this);
-							
+
 							setTimeout ( function () {
 								el.addClass('bounceIn animated');
 							},  k * 200, 'easeInOutExpo' );
-							
+
 						});
 					}, sec);
 
-					
 
-					
+
+
 
 					$(this.element).addClass('animated');
-						
+
 				}
 			} , { offset: '80%' } );
 
@@ -408,25 +408,25 @@
 
 	var contactAnimate = function() {
 		var contact = $('#contact');
-		if ( contact.length > 0 ) {	
+		if ( contact.length > 0 ) {
 
 			contact.waypoint( function( direction ) {
-										
+
 				if( direction === 'down' && !$(this.element).hasClass('animated') ) {
 
 					setTimeout(function() {
 						contact.find('.to-animate').each(function( k ) {
 							var el = $(this);
-							
+
 							setTimeout ( function () {
 								el.addClass('fadeInUp animated');
 							},  k * 200, 'easeInOutExpo' );
-							
+
 						});
 					}, 200);
 
 					$(this.element).addClass('animated');
-						
+
 				}
 			} , { offset: '80%' } );
 
@@ -491,7 +491,7 @@
 	    	$("#message").parent().addClass("has-error");
 	    	inputError = true;
 	    }
-	    
+
 	    // If no errors, Ajax call runs php script and sends me an email
 	    if (!inputError) {
 
@@ -569,7 +569,7 @@
 		aboutAnimate();
 		countersAnimate();
 		contactAnimate();
-		
+
 	});
 
 }());
