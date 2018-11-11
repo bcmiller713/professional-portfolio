@@ -391,7 +391,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #home, #home .text-wrap {
-  height: 900px;
+  height: 1000px;
 }
 
 #home .text-wrap {
@@ -618,12 +618,12 @@ div.social.about-social-circle {
   justify-content: center;
 }
 
-#recommendations, #contact {
-  padding: 4em 0;
+#about, #resume, #recommendations, #contact {
+  padding-top: 7em;
 }
 
 #skills, #portfolio, #counters {
-  padding: 7em 0;
+  padding: 9em 0 7em 0;
 }
 
 #skills {
@@ -695,6 +695,12 @@ div.social.about-social-circle {
 
 #skills .section-heading h2.left-border:after {
   background: rgba(255, 255, 255, 0.3);
+}
+
+#resume .icon {
+  font-size: 70px;
+  margin: 20px 0;
+  display: inline-block;
 }
 
 #counters {
@@ -1256,14 +1262,14 @@ div.social.about-social-circle {
 }
 
 #footer {
-  padding: 50px 0;
+  padding: 30px 0;
   color: #7f7f7f;
   position: relative;
 }
 
 #footer .gotop {
   position: absolute;
-  top: -20px;
+  top: -40px;
   left: 50%;
   margin-left: -40px;
   background: #fff;
@@ -1285,7 +1291,7 @@ div.social.about-social-circle {
 }
 
 #footer .gotop:hover, #footer .gotop:focus {
-  top: -25px;
+  top: -45px;
   text-decoration: none !important;
 }
 
